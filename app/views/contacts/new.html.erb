@@ -3,14 +3,8 @@
   <%= notice %>
   <h1>お問い合わせ内容を入力してください</h1>
     <%= form_for(@contact, url: confirm_contacts_path) do |f| %>
-      <% if @contact.errors.any? %>
-      <h3><%= @contact.errors.count %>件エラーがあります。</h3>
-        <ul>
-          <% @contact.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      <% end %>
+      <%= f.error_messages! %>
+      
       <%= f.label :名前 %>
       <%= f.text_field :name, class: 'form-control' %>
       <br>
