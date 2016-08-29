@@ -5,7 +5,7 @@
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
         <% @users.each do |users| %>
           <h3><p><div class="field">
-            <%= profile_img(user) if profile_img(user) %>
+            <%= profile_img(@users) if profile_img(@users) %>
             <%= user.file_field :avatar %>
             <%= user.hidden_field :avatar_cache %>
             </div>
