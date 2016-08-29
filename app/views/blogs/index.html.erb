@@ -4,7 +4,7 @@
     <h1>ブログ一覧</h1>
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
         <% @users.each do |users| %>
-          <h3><p><%= profile_img(@users) if profile_img(@users) %><%= users.id %>:<%= users.name %></p></h3>
+          <h3><p><%= users.id %>:<%= users.name %></p></h3>
         <% end %>
       <% @blogs.each do |blog| %>
         <div class="row">
