@@ -4,12 +4,11 @@ class BlogsController < ApplicationController
   
   def index
     @blogs = Blog.all
-    @users = User.all
   end
   
   
   def show
-    #@comment = @blog.comments.build
+    @comment = @blog.comments.build
     @comments = @blog.comments
   end
   
