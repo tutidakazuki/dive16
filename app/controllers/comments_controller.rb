@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def create
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
     @comment = current_user.comments.build(comment_params)
@@ -14,6 +15,18 @@ class CommentsController < ApplicationController
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def destroy
+    @comment = current_user.comments.build(comment_params)
+    @blog = @comment.blog
+    
+    respond_to do |format|
+      @comment.destroy
+      format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
+      format.json{render :show, status: :created, location: @comment}
+      format.js{render:index}
     end
   end
   
