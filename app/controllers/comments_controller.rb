@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = current_user.comments.build(comment_params)
+    @comment = Comment.find(params[:id])
     @blog = @comment.blog
     
     respond_to do |format|
