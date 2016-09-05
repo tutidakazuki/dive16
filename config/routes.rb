@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #get 'relationships/create'
+  #get 'relationships/destroy'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #devise_for :users
@@ -33,7 +35,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-
+  #一覧表示用のルーティング
+  resources :users, only: [:index]
+  #フォローをする、やめるの機能のルーティング
+  resources :relationships, only: [:create, :destroy]
   #get 'blogs' => 'blogs#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
