@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   #一覧表示用のルーティング
   resources :users, only: [:index]
   #フォローをする、やめるの機能のルーティング
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy, :show]
   #get 'blogs' => 'blogs#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
