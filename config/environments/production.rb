@@ -81,7 +81,7 @@ Rails.application.configure do
 #config.action_mailer.delivery_method = :letter_opener_web
 config.action_mailer.default_url_options = 
 {
-  host: 'https://tranquil-island-15739.herokuapp.com' 
+  host: 'https://mysterious-river-48723.herokuapp.com' 
 }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
