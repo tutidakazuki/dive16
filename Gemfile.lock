@@ -288,7 +288,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
-  letter_opener
   letter_opener_web
   omniauth
   omniauth-facebook
