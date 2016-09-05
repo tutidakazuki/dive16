@@ -1,6 +1,6 @@
 module ApplicationHelper
   def profile_img(user)
-    raise
+    #raise
     return image_tag(user.avatar, alt: user.name) if user.avatar?
     
     unless user.provider.blank?
