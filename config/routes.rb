@@ -36,9 +36,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   #一覧表示用のルーティング
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
   #フォローをする、やめるの機能のルーティング
-  resources :relationships, only: [:create, :destroy, :show]
+  resources :relationships, only: [:create, :destroy]
   #get 'blogs' => 'blogs#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

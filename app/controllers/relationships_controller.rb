@@ -14,7 +14,8 @@ class RelationshipsController < ApplicationController
     respond_with @user
   end
   
-  def show
+  #def show
+  #  @user = Relationship.find(params[:id])
+  #end
   
-  end
 end
