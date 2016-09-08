@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks
   #get 'relationships/create'
   #get 'relationships/destroy'
 
@@ -36,7 +37,12 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   #一覧表示用のルーティング
-  resources :users, only: [:index, :show]
+  #resources :users, only: [:index, :show]
+  
+  resources :users, only: [:index, :show, :edit, :update] do
+    resources :tasks
+  end
+  
   #フォローをする、やめるの機能のルーティング
   resources :relationships, only: [:create, :destroy]
   #get 'blogs' => 'blogs#index'
