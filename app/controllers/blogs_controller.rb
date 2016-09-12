@@ -44,8 +44,12 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog.destroy
-    redirect_to blogs_path, notice:"ブログを削除しました！"
+    if @blog.user == current_user
+        @blog.destroy
+        redirect_to blogs_path, notice:"ブログを削除しました！"
+      else
+        redirect_to blogs_path, notice:"ブログの投稿者以外は削除できません！"
+    end
   end
   
   def confirm
